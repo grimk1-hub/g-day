@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Girlfriend's Day 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ffe0f0, #f8bbd0);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 50px 20px;
+      position: relative;
+    }
+    h1 {
+      font-size: 3em;
+      color: #e91e63;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    section {
+      padding: 40px 20px;
+    }
+    .reasons ul {
+      list-style: none;
+      padding: 0;
+    }
+    .reasons li::before {
+      content: "💗 ";
+    }
+    .reasons li {
+      font-size: 1.2em;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .reasons li:hover {
+      transform: scale(1.1);
+    }
+    .memories img {
+      width: 200px;
+      height: auto;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px #ccc;
+      transition: transform 0.3s ease;
+    }
+    .memories img:hover {
+      transform: rotate(-5deg) scale(1.05);
+    }
+    .letter {
+      background: #fce4ec;
+      border-radius: 20px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .hanging-heart {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      animation: swing 4s infinite ease-in-out;
+    }
+    @keyframes swing {
+      0% { transform: translateX(-50%) rotate(0deg); }
+      50% { transform: translateX(-50%) rotate(10deg); }
+      100% { transform: translateX(-50%) rotate(0deg); }
+    }
+    .surprise-button {
+      background-color: #e91e63;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background-color 0.3s;
+    }
+    .surprise-button:hover {
+      background-color: #ad1457;
+    }
+    #surprise-content {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #880e4f;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 1em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="hanging-heart" src="https://emoji.slack-edge.com/T02J2FSLE/heart/8121fcb4d1c90b77.png" alt="Heart hanging" />
+    <h1>Happy Girlfriend's Day, My Love! 💖</h1>
+    <p>Click around, there are lil surprises 🥰</p>
+  </header>
+
+  <section class="reasons">
+    <h2>Why I Love You 💘</h2>
+    <ul>
+      <li onclick="alert('Because you are my comfort person 🥹')">You make my world better just by being in it</li>
+      <li onclick="alert('That smile? MELTS me every time 😭❤️')">Your smile is my favorite thing</li>
+      <li onclick="alert('Brains and beauty? UGH unfair 😤💕')">You're smart, strong, and so loving</li>
+      <li onclick="alert('Through thick and thin, it’s always you. Always.')">You’ve been my peace, my joy, and my person</li>
+    </ul>
+  </section>
+
+  <section class="memories">
+    <h2>Our Memories 🖼️</h2>
+    <p>Hover over them 👀</p>
+    <img src="https://via.placeholder.com/200" alt="Memory 1">
+    <img src="https://via.placeholder.com/200" alt="Memory 2">
+    <img src="https://via.placeholder.com/200" alt="Memory 3">
+  </section>
+
+  <section class="letter">
+    <h2>A Little Letter 💌</h2>
+    <p>
+      Hey baby,<br><br>
+      I just want to say how lucky I am to have you. You’ve been my strength,
+      my comfort, my best friend. Through every up and down, I find myself loving you more.<br>
+      This website is a tiny slice of the giant heart I have for you 😚💗<br><br>
+      Forever yours,<br>
+      [Your Name Here] 🫶🏼
+    </p>
+    <button class="surprise-button" onclick="document.getElementById('surprise-content').style.display='block'">Tap for a lil surprise 💝</button>
+    <div id="surprise-content">
+      🧁 You are the icing to my cupcake, the beat to my song, the warmth in my hug. And I’m never letting go. 🤍
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with all my heart ❤️ | [YourName].dev</p>
+  </footer>
+
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="tere bina.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    const music = document.getElementById('bg-music');
+    music.volume = 0.4;
+  </script>
+</body>
+</html>
+
+first commit
