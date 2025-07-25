@@ -827,15 +827,54 @@ function updateTimeTogether() {
     
     // Initialize everything
     window.onload = function() {
-      createHearts();
-      updateTimeTogether();
-      setInterval(updateTimeTogether, 1000);
-      
-      // Start with music paused
-      music.volume = 0.4;
-      musicPlaying = false;
-      musicControl.innerHTML = '<i class="fas fa-music"></i>';
+    createHearts();
+    updateTimeTogether();
+    setInterval(updateTimeTogether, 1000);
+    
+    // Start with music paused
+    const music = document.getElementById('bg-music');
+    const musicControl = document.getElementById('music-control');
+    music.volume = 0.4;
+    let musicPlaying = false;
+    musicControl.innerHTML = '<i class="fas fa-music"></i>';
+
+    // NEW: Function to try playing music
+    const tryToPlay = () => {
+        music.play()
+            .then(() => {
+                musicPlaying = true;
+                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+            })
+            .catch(error => {
+                console.log("Waiting for user interaction...");
+            });
     };
+    
+    // NEW: First try to play automatically
+    tryToPlay();
+    
+    // NEW: If it didn't work, play on first click anywhere
+    document.body.addEventListener('click', function firstClick() {
+        tryToPlay();
+        // Remove this listener after the first click
+        document.body.removeEventListener('click', firstClick);
+    }, { once: true });
+
+    // Music control button
+    musicControl.addEventListener('click', function(event) {
+        // NEW: Stop the click from going to the body (important!)
+        event.stopPropagation();
+        
+        if (musicPlaying) {
+            music.pause();
+            musicControl.innerHTML = '<i class="fas fa-music"></i>';
+        } else {
+            music.play();
+            musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+        }
+        musicPlaying = !musicPlaying;
+    });
+};
   </script>
 </body>
 </html>
